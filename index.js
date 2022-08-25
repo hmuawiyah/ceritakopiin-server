@@ -9,9 +9,9 @@ app.use(cors());
 
 const db = mysql.createConnection({
   user: "sql6514990",
-  host: "sql6514990",
+  host: "sql6.freesqldatabase.com",
   password: "83DkLNb1H9",
-  database: "ceritakopiin"
+  database: "sql6514990"
 });
 
 app.post('/register', (req, res)=>{
@@ -64,7 +64,7 @@ app.get("/data", (req, res) => {
     if (result) {
       res.send(result)
     } else {
-      console.log("ada yang salah");
+      console.log(err);
     }
   })
 })
