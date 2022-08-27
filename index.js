@@ -24,10 +24,10 @@ app.post('/memesan', (req, res)=>{
   const alamat = req.body.alamat;
   const catatan = req.body.catatan;
   const harga = req.body.harga;
-  const statusnya = req.body.statusnya;
+  const statuspesanan = req.body.statuspesanan;
 
-  db.query("INSERT INTO pelanggan (tanggal, namalengkap, GA, CB, RV, nowa, alamat, catatan, harga, statusnya) VALUES (?,?,?,?,?,?,?,?,?,?)", 
-  [tanggal, namalengkap, GA, CB, RV, nowa, alamat, catatan, harga, statusnya], 
+  db.query("INSERT INTO pelanggan (tanggal, namalengkap, GA, CB, RV, nowa, alamat, catatan, harga, statuspesanan) VALUES (?,?,?,?,?,?,?,?,?,?)", 
+  [tanggal, namalengkap, GA, CB, RV, nowa, alamat, catatan, harga, statuspesanan], 
   (err, result)=>{
     console.log(err);
   }
@@ -36,10 +36,10 @@ app.post('/memesan', (req, res)=>{
 
 app.put('/update', (req, res)=>{
   const id = req.body.id;
-  const newStatusnya = req.body.newStatusnya;
+  const newstatuspesanan = req.body.newstatuspesanan;
 
-  db.query("UPDATE pelanggan SET statusnya= ? WHERE id= ?", 
-  [newStatusnya, id], 
+  db.query("UPDATE pelanggan SET statuspesanan= ? WHERE id= ?", 
+  [newstatuspesanan, id], 
   (err, result)=>{
     res.send(result)
   }
