@@ -14,7 +14,7 @@ const db = mysql.createConnection({
   database: "sql6514990"
 });
 
-app.post('/register', (req, res)=>{
+app.post('/memesan', (req, res)=>{
   const tanggal = req.body.tanggal;
   const namalengkap = req.body.namalengkap;
   const GA = req.body.GA;
